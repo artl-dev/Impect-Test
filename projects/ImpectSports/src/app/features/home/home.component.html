@@ -1,0 +1,22 @@
+<mat-grid-list
+  cols="3"
+  *ngIf="$baseSportsData | async as sports"
+  rowHeight="2:1"
+  gutterSize="20"
+>
+  <mat-grid-tile *ngFor="let sport of sports">
+    <mat-card>
+      <img mat-card-image [src]="sport.strSportThumb" alt="Sport Thumb" />
+      <mat-card-footer>
+        <img
+          [src]="
+            'https://www.thesportsdb.com/images/icons/' +
+            sport.strSport +
+            '.png'
+          "
+        />
+        {{ sport.strSport }}
+      </mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
